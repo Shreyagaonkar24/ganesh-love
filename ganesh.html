@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>For Ganesh ❤️</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: 'Poppins', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: linear-gradient(135deg, #1a1a2e, #3a0ca3);
+      color: #fff;
+    }
+    .container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+      text-align: center;
+    }
+    .card {
+      background: rgba(255,255,255,0.08);
+      backdrop-filter: blur(10px);
+      border-radius: 22px;
+      padding: 26px 22px;
+      max-width: 430px;
+      width: 100%;
+      box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+      animation: fadeIn 1.5s ease;
+    }
+    h1 {
+      font-size: 1.9rem;
+      margin-bottom: 10px;
+      color: #ffb3d9;
+    }
+    p {
+      font-size: 1.05rem;
+      line-height: 1.7;
+      margin: 14px 0;
+      color: #f2f2f2;
+    }
+    .heart {
+      font-size: 2.6rem;
+      animation: beat 1.5s infinite;
+      margin: 12px 0;
+    }
+    button {
+      margin-top: 22px;
+      padding: 13px 24px;
+      border: none;
+      border-radius: 35px;
+      background: linear-gradient(135deg, #ff4d8d, #ff85b3);
+      color: #fff;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+    }
+    button:active { transform: scale(0.96); }
+    footer {
+      margin-top: 16px;
+      font-size: 0.85rem;
+      color: #ddd;
+    }
+    @keyframes beat {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.25); }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(25px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <!-- Background Music -->
+  <audio id="bgm" loop>
+    <source src="https://cdn.pixabay.com/audio/2022/10/30/audio_2b1b8e9a8b.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <div class="card" id="card">
+      <h1>Ganesh… This Is For You ❤️</h1>
+      <div class="heart">❤️</div>
+      <p>
+        I made this little world only for you, Ganesh.
+        A place where you can breathe, feel safe,
+        and remember how deeply you are loved.
+      </p>
+      <p>
+        I know life hasn’t always been kind to you.
+        I know you carry things you never talk about.
+        But even with all that weight,
+        your heart is still gentle, warm, and beautiful.
+      </p>
+      <p>
+        Your smile has the power to calm storms.
+        Your presence feels like home.
+        And your existence alone makes this world
+        a little softer, a little brighter.
+      </p>
+      <p>
+        On the days you feel tired, lost, or broken,
+        please remember this —
+        you don’t have to be strong all the time.
+        You are allowed to rest.
+        You are allowed to feel.
+      </p>
+      <p style="font-weight:600; color:#ffb3d9;">
+        You matter. You are enough.
+        And you are deeply loved — today and always.
+      </p>
+      <button onclick="moreLove()">Tap Here… My Heart Is Still Speaking 💕</button>
+      <footer>
+        Made with endless love, just for you 🌙
+      </footer>
+    </div>
+  </div>
+
+  <script>
+    const music = document.getElementById('bgm');
+    document.body.addEventListener('click', () => {
+      music.play();
+    }, { once: true });
+
+    const messages = [
+      "You are someone worth choosing, every single day 💫",
+      "Your heart deserves peace, love, and gentleness 🤍",
+      "Even your silent strength is beautiful 🌙",
+      "No sadness lasts forever — but your light does 🌸",
+      "I believe in you more than you know ❤️"
+    ];
+    let index = 0;
+
+    function moreLove() {
+      const p = document.createElement('p');
+      p.textContent = messages[index];
+      p.style.fontWeight = '600';
+      p.style.color = '#ffb3d9';
+      document.getElementById('card').insertBefore(p, document.querySelector('footer'));
+      index = (index + 1) % messages.length;
+    }
+  </script>
+</body>
+</html>
